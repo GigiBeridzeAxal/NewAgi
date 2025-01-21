@@ -33,25 +33,13 @@ export function FormInputKey(props: {
     <FormControl id={acId}>
 
       {!!props.label && <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-        <FormLabel>{props.label}</FormLabel>
+ 
         {!!props.rightLabel && <FormHelperText sx={{ display: 'block' }}>
           {props.rightLabel}
         </FormHelperText>}
       </Box>}
 
-      <Input
-        key={acId}
-        name={acId}
-        autoComplete='off'
-        // autoComplete={props.noKey ? 'off' : 'new-password'}
-        variant={props.required ? 'outlined' : 'outlined' /* 'soft */}
-        value={props.value} onChange={handleChange}
-        placeholder={props.required ? props.placeholder ? 'required: ' + props.placeholder : 'required' : props.placeholder || '...'}
-        type={(isVisible || !!props.noKey) ? 'text' : 'password'}
-        error={props.isError}
-        startDecorator={!props.noKey && <KeyIcon />}
-        endDecorator={endDecorator}
-      />
+    
 
       {props.description && <FormHelperText sx={{ display: 'block' }}>{props.description}</FormHelperText>}
 
